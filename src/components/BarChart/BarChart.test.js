@@ -16,7 +16,7 @@ describe("Bar Chart", () => {
       }));
     data = generateData();
   });
-  
+
   describe("Graph with Brush", () => {
     let horizontalBrush, $;
     beforeAll(async (done) => {
