@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import * as d3 from "d3";
 import BarChart from "../../components/BarChart";
 import './Charts.css';
@@ -12,25 +12,23 @@ function Charts() {
         }));
 
     const [data, setData] = useState(generateData());
+
     const changeData = () => {
-        // setData(generateData(null, Math.floor(Math.random() * 10 + 1)));
         setData(generateData());
     };
 
     return (
         <div className="Charts">
-            <div>
-                <span className="label">Bar SVG</span>
-                <BarChart
-                    data={data}
-                    width={300}
-                    height={200}
-                    top={20}
-                    bottom={30}
-                    left={30}
-                    right={0}
-                />
-            </div>
+            <span className="label">Bar Chart</span>
+            <BarChart
+                data={data}
+                width={300}
+                height={200}
+                top={20}
+                bottom={30}
+                left={30}
+                right={0}
+            />
         </div>
     );
 }
