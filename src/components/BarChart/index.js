@@ -101,6 +101,7 @@ const BarChart = props => {
                     {data.map((d, i) => (
                         <Rect
                             data={d}
+                            key={i}
                             x={x}
                             y={y}
                             top={props.top}

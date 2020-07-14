@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as d3 from "d3";
 import BarChart from "../../components/BarChart";
-import './Charts.css';
+import "./Charts.css";
 
 function Charts() {
+    useEffect(() => {
+        document.title = "React Bar Chart";
+    }, []);
+
     const generateData = (value, length = 5) =>
         d3.range(length).map((item, index) => ({
             index: index,
             date: index,
-            value: value === null || value === undefined ? Math.random() * 100 : value
+            value:
+                value === null || value === undefined ? Math.random() * 100 : value,
         }));
 
     const [data, setData] = useState(generateData());
